@@ -1,0 +1,100 @@
+/* Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Piano container */
+#piano {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: flex-end;
+    height: 35vh; /* Dynamic height */
+    margin-top: 20px;
+    max-width: 90vw; /* Maximum width for smaller screens */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styling for white keys */
+.key.white {
+    flex: 1; /* Automatic width adjustment */
+    height: 80%; /* Proportional to the container height */
+    border: 2px solid black;
+    background-color: white;
+    text-align: center;
+    line-height: 200px;
+    font-size: 1.5vw; /* Font size adapts to screen size */
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background 0.1s ease-in-out, transform 0.05s;
+    position: relative;
+}
+
+/* Effect for pressed white keys */
+.key.white:active, .key.white.pressed {
+    background-color: #ddd;
+    transform: scale(0.98);
+}
+
+/* Styling for black keys */
+.key.black {
+    width: 7%;
+    height: 50%;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 62px;
+    left: 50%;
+    text-align: center;
+    line-height: 120px;
+    font-size: 1vw;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background 0.1s ease-in-out, transform 0.05s;
+}
+
+/* Effect for pressed white keys */
+.key.white:active, .key.white.pressed {
+    background-color: #ddd;
+    transform: scale(0.98);
+}
+
+/* Effect for pressed black keys (same logic as white keys) */
+.key.black:active, .key.black.pressed {
+    background-color: #444;
+    transform: scale(0.98);
+}
+
+/* Correct positioning of black keys */
+#keyCsharp { left: 11%; }
+#keyDsharp { left: 25%; }
+#keyFsharp { left: 53.5%; }
+#keyGsharp { left: 68%; }
+#keyAsharp { left: 82%; }
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    #piano {
+        width: 100%;
+        height: 30vh;
+    }
+
+    .key.white {
+        font-size: 2vw;
+    }
+
+    .key.black {
+        width: 50%;
+        height: 50%;
+        font-size: 2vw;
+    }
+}

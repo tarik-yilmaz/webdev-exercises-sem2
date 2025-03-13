@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Virtual Piano</title>
+
+    <!-- Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Custom CSS for additional styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main container with centered content -->
+    <div class="container text-center my-5">
+        <h1>Virtual Piano</h1>
+        <p>Press the following keys to play the notes:</p>
+
+        <!-- Displaying key mappings for playing notes -->
+        <ul class="list-inline">
+            <li class="list-inline-item"><strong>A</strong> - C</li>
+            <li class="list-inline-item"><strong>W</strong> - C#</li>
+            <li class="list-inline-item"><strong>S</strong> - D</li>
+            <li class="list-inline-item"><strong>E</strong> - D#</li>
+            <li class="list-inline-item"><strong>D</strong> - E</li>
+            <li class="list-inline-item"><strong>F</strong> - F</li>
+            <li class="list-inline-item"><strong>T</strong> - F#</li>
+            <li class="list-inline-item"><strong>G</strong> - G</li>
+            <li class="list-inline-item"><strong>Y</strong> - G#</li>
+            <li class="list-inline-item"><strong>H</strong> - A</li>
+            <li class="list-inline-item"><strong>U</strong> - A#</li>
+            <li class="list-inline-item"><strong>J</strong> - B</li>
+        </ul>
+
+        <!-- Piano keys section -->
+        <div id="piano" class="d-flex justify-content-center">
+            <!-- White Keys (Natural Notes) -->
+            <div class="key white" id="keyC">C</div>
+            <div class="key white" id="keyD">D</div>
+            <div class="key white" id="keyE">E</div>
+            <div class="key white" id="keyF">F</div>
+            <div class="key white" id="keyG">G</div>
+            <div class="key white" id="keyA">A</div>
+            <div class="key white" id="keyB">B</div>
+
+            <!-- Black Keys (Sharp Notes) -->
+            <div class="key black" id="keyCsharp">C#</div>
+            <div class="key black" id="keyDsharp">D#</div>
+            <div class="key black" id="keyFsharp">F#</div>
+            <div class="key black" id="keyGsharp">G#</div>
+            <div class="key black" id="keyAsharp">A#</div>
+        </div>
+    </div>
+
+    <!-- JavaScript file to handle piano functionality -->
+    <script src="my_piano.js"></script>
+</body>
+</html>
