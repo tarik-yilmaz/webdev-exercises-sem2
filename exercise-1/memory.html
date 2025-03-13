@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="memory_style.css">
+</head>
+<body>
+    <h1>Memory Game</h1>
+
+    <div id="game-board">
+        <!-- 🎴 Memory Cards (Static Setup) -->
+        <!-- Each card starts with a "?" and reveals a fruit emoji when clicked -->
+        <div class="card" id="card1" onclick="flipCard(this, '🍏')">?</div>
+        <div class="card" id="card2" onclick="flipCard(this, '🍏')">?</div>
+
+        <div class="card" id="card3" onclick="flipCard(this, '🍌')">?</div>
+        <div class="card" id="card4" onclick="flipCard(this, '🍌')">?</div>
+
+        <div class="card" id="card5" onclick="flipCard(this, '🍇')">?</div>
+        <div class="card" id="card6" onclick="flipCard(this, '🍇')">?</div>
+
+        <div class="card" id="card7" onclick="flipCard(this, '🍉')">?</div>
+        <div class="card" id="card8" onclick="flipCard(this, '🍉')">?</div>
+    </div>
+
+    <!-- 📢 Game Messages -->
+    <p id="message"></p>
+
+    <!-- 🔄 Reset Button -->
+    <button id="button" onclick="resetGame()">New Game</button>
+
+    <script>
+        // 🃏 Memory Game Logic
+        // Variables for game state tracking
+        let firstCard = null;  // Stores the first clicked card
+        let firstSymbol = "";  // Stores the symbol of the first card
+        let pairsFound = 0;    // Counter for found pairs
+        let canClick = true;   // Prevents clicking too early
+
+        /**
+         * 🎴 Flip a card when clicked
+         * @param {HTMLElement} card - The clicked card element
+         * @param {string} symbol - The symbol hidden behind the card
+         */
+        function flipCard(card, symbol) {
+            if (!canClick || card.textContent !== "?") return; // Ignore clicks on revealed cards
+
+            card.textContent = symbol; // Reveal the symbol
+
+            if (!firstCard) {
+                // First card clicked
+                firstCard = card;
+                firstSymbol = symbol;
+            } else {
+                // Second card clicked
+                canClick = false; // Temporarily disable further clicks
+
+                if (firstSymbol === symbol) {
+                    // ✅ Match found – keep the cards visible
+                    document.getElementById("message").textContent = "Pair found!";
+                    pairsFound++;
+
+                    // 🎉 Check if all pairs are found
+                    if (pairsFound === 4) {
+                        document.getElementById("message").textContent = "Congratulations! All pairs found!";
+                    }
+                    firstCard = null;
+                    canClick = true;
+                } else {
+                    // ❌ No match – hide cards after a short delay
+                    document.getElementById("message").textContent = "No match!";
+                    
+                    setTimeout(() => {
+                        firstCard.textContent = "?";
+                        card.textContent = "?";
+                        firstCard = null;
+                        canClick = true;
+                    }, 1000);
+                }
+            }
+        }
+
+        /**
+         * 🔄 Reset the game state
+         */
+        function resetGame() {
+            // Reset all cards to "?"
+            let cards = document.querySelectorAll(".card");
+            cards.forEach(card => card.textContent = "?");
+
+            // Reset game state variables
+            document.getElementById("message").textContent = "";
+            firstCard = null;
+            firstSymbol = "";
+            pairsFound = 0;
+            canClick = true;
+        }
+    </script>
+</body>
+</html>
