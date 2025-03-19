@@ -21,5 +21,4 @@ yarn.lock
 Thumbs.db
 
 # Ignore compiled TypeScript files (if not using a build tool)
-*.js
 *.js.map
