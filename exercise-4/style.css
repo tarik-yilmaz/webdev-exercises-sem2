@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#piano {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: flex-end;
+    height: 35vh;
+    margin-top: 20px;
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.key.white {
+    flex: 1;
+    height: 80%;
+    border: 2px solid black;
+    background-color: white;
+    text-align: center;
+    line-height: 200px;
+    font-size: 1.5vw;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background 0.1s ease-in-out, transform 0.05s;
+    position: relative;
+}
+
+.key.white.pressed {
+    background-color: #ddd;
+    transform: scale(0.98);
+}
+
+.key.black {
+    width: 7%;
+    height: 50%;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 63px;
+    z-index: 1; /* Ensures black keys stay above white keys, source: https://developer.mozilla.org/de/docs/Web/CSS/z-index */
+    text-align: center;
+    line-height: 120px;
+    font-size: 1vw;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background 0.1s ease-in-out, transform 0.05s;
+}
+
+.key.black.pressed {
+    background-color: #444;
+    transform: scale(0.98);
+}
+
+/* Black key positioning */
+#keyCsharp { left: 11%; }
+#keyDsharp { left: 25%; }
+#keyFsharp { left: 53.5%; }
+#keyGsharp { left: 68%; }
+#keyAsharp { left: 82%; }
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    #piano {
+        width: 100%;
+        height: 30vh;
+    }
+
+    .key.white {
+        font-size: 2vw;
+    }
+
+    .key.black {
+        width: 5%;
+        height: 50%;
+        font-size: 2vw;
+    }
+}
