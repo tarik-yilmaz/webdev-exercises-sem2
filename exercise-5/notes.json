@@ -1,0 +1,14 @@
+[
+    { "note": "C", "sound": "sounds/C.mp3" },
+    { "note": "Csharp", "sound": "sounds/Ash4.mp3" },
+    { "note": "D", "sound": "sounds/D.mp3" },
+    { "note": "Dsharp", "sound": "sounds/DSH4.mp3" },
+    { "note": "E", "sound": "sounds/E.mp3" },
+    { "note": "F", "sound": "sounds/F.mp3" },
+    { "note": "Fsharp", "sound": "sounds/F4.mp3" },
+    { "note": "G", "sound": "sounds/G.mp3" },
+    { "note": "Gsharp", "sound": "sounds/G4.mp3" },
+    { "note": "A", "sound": "sounds/A.mp3" },
+    { "note": "Asharp", "sound": "sounds/ASH4.mp3" },
+    { "note": "B", "sound": "sounds/B.mp3" }
+]

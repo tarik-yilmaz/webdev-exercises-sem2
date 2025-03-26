@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Piano</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container text-center my-5">
+        <h1>Virtual Piano</h1>
+        <p>Press the following keys to play the notes:</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><strong>A</strong> - C</li>
+            <li class="list-inline-item"><strong>W</strong> - C#</li>
+            <li class="list-inline-item"><strong>S</strong> - D</li>
+            <li class="list-inline-item"><strong>E</strong> - D#</li>
+            <li class="list-inline-item"><strong>D</strong> - E</li>
+            <li class="list-inline-item"><strong>F</strong> - F</li>
+            <li class="list-inline-item"><strong>T</strong> - F#</li>
+            <li class="list-inline-item"><strong>G</strong> - G</li>
+            <li class="list-inline-item"><strong>Y</strong> - G#</li>
+            <li class="list-inline-item"><strong>H</strong> - A</li>
+            <li class="list-inline-item"><strong>U</strong> - A#</li>
+            <li class="list-inline-item"><strong>J</strong> - B</li>
+        </ul>
+        <div id="piano" class="d-flex justify-content-center"></div>
+        <button id="reset-btn" class="btn btn-primary mt-3">Reset Piano</button> <!-- Added reset button -->
+    </div>
+    <script src="my_piano.js"></script>
+</body>
+</html>
